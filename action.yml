@@ -1,0 +1,16 @@
+name: "Action Check Conventional Commits"
+description: "Ensures that at least one commit message is following the conventional-commits standard."
+author: Viacheslav Voloshchuk <vvoloshchuk777@gmail.com>
+branding:
+  icon: 'git-commit'
+  color: 'green'
+inputs:
+  GITHUB_TOKEN:
+    description: "Github token"
+    required: true
+outputs:
+  commits:
+    description: "Stringified objects array with commits from the PR"
+runs:
+  using: node16
+  main: dist/index.js
